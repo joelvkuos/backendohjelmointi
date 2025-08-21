@@ -12,21 +12,20 @@ import jakarta.validation.Valid;
 @Controller
 public class MessageController {
 
-    @RequestMapping(value="/hello", method=RequestMethod.GET)
+    @RequestMapping(value="/newmessage", method=RequestMethod.GET)
     public String greetingForm(Model model) {
-    	System.out.println("hello hello");
     	model.addAttribute("message", new Message());
-        return "hello";
+        return "form"; // form.html
     }
 
-    @RequestMapping(value="/hello", method=RequestMethod.POST)
+    @RequestMapping(value="/newmessage", method=RequestMethod.POST)
     public String greetingSubmit(@Valid Message msg, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-        	return "hello";
+        	return "form"; // form.html
         }
         
     	model.addAttribute("message", msg);
-        return "result";
+        return "result";  // result.html
     }
 
 }

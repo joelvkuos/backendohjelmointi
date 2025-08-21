@@ -11,15 +11,15 @@ import fi.haagahelia.course.domain.Message;
 @Controller
 public class MessageController {
 
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	@RequestMapping(value = "/newmessage", method = RequestMethod.GET)
 	public String greetingForm(Model model) {
 		model.addAttribute("message", new Message());
-		return "hello";
+		return "form"; // form.html
 	}
 
-	@RequestMapping(value = "/hello", method = RequestMethod.POST)
+	@RequestMapping(value = "/newmessage", method = RequestMethod.POST)
 	public String greetingSubmit(@ModelAttribute Message msg, Model model) {
 		model.addAttribute("message", msg);
-		return "result";
+		return "result";  // result.html
 	}
 }
