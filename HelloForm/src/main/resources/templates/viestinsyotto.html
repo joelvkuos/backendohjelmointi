@@ -2,16 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>Handling Lists</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
-    <h1>Form</h1>
+    <h1>Welcome to the Haaga-Helia!</h1>
     <table>
-        <tr th:each="viesti : ${viestit}">
-
-            <td th:text="${viesti.sisalto}">Text ...</td>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.firstName}">First Name</td>
+            <td th:text="${student.lastName}">Last Name</td>
         </tr>
     </table>
 </body>
